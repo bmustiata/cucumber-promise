@@ -2,10 +2,11 @@
 
 Backwards compatible cucumber promise support.
 
-Just wrap your previous implementation step function
-into the `cucumber-promise`'s `cpromise`.
+## Usage
 
-# Usage
+Just wrap your implementation steps function into `cpromise`, and
+use promises, or implement steps without explicitly calling the
+callback function.
 
 ```javascript
 var cpromise = require("cucumber-promise").cpromise;
