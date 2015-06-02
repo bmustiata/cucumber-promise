@@ -1,0 +1,41 @@
+{
+  "name": "cucumber-promise",
+  "description": "Backwards compatible cucumber promise support",
+  "author": [
+    {
+      "name": "Bogdan Mustiata",
+      "email": "bogdan.mustiata@gmail.com"
+    }
+  ],
+  "version": "0.1.0",
+  "dependencies": {
+    "blinkts-lang": "^0.1.7",
+    "superb-class": "^0.3.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1"
+  },
+  "keywords": [
+    "cucumber",
+    "promise"
+  ],
+  "main": "./lib/cucumber-promise.js",
+  "bugs": {
+    "url": "https://github.com/bmustiata/cucumber-promise/issues"
+  },
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/bmustiata/cucumber-promise/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmustiata/cucumber-promise.git"
+  },
+  "readme": "# cucumber-promise\nBackwards compatible cucumber promise support.\nJust wrap your previous implementation step function\ninto the `cucumber-promise`'s `cpromise`.\n# Usage\n```javascript\nvar cpromise = require(\"cucumber-promise\").cpromise;\nmodule.exports = cpromise(function() {\n    // the old way works\n    this.Given(/^I run a test with cucumber\\-promise$/, function(callback) {\n        callback();\n    });\n    // code without callbacks works\n    this.Then(/^I run code without callbacks$/, function() {\n        // if no callback it's present, this also works\n    });\n    // and promises also work\n    this.Then(/^I run a promise call$/, function() {\n        return new Promise(function(fulfill, reject) {\n            // promise resolving\n            fulfill();\n        });\n    });\n});\n```\n## Install\nIn order to install this just run:\n```sh\nnpm install --save-dev cucumber-promise\n```\n",
+  "readmeFilename": "README.md",
+  "homepage": "http://blog.ciplogic.com"
+}
