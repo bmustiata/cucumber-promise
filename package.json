@@ -7,7 +7,7 @@
       "email": "bogdan.mustiata@gmail.com"
     }
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "blinkts-lang": "^0.1.7",
     "superb-class": "^0.3.1"
@@ -35,7 +35,7 @@
     "type": "git",
     "url": "https://github.com/bmustiata/cucumber-promise.git"
   },
-  "readme": "# cucumber-promise\nBackwards compatible cucumber promise support.\n## Usage\nJust wrap your implementation steps function into `cpromise`, and\nuse promises, or implement steps without explicitly calling the\ncallback function.\n```javascript\nvar cpromise = require(\"cucumber-promise\").cpromise;\nmodule.exports = cpromise(function() {\n    // the old way works\n    this.Given(/^I run a test with cucumber\\-promise$/, function(callback) {\n        callback();\n    });\n    // code without callbacks works\n    this.Then(/^I run code without callbacks$/, function() {\n        // if no callback it's present, this also works\n    });\n    // and promises also work\n    this.Then(/^I run a promise call$/, function() {\n        return new Promise(function(fulfill, reject) {\n            // promise resolving\n            fulfill();\n        });\n    });\n});\n```\n## Install\nIn order to install this just run:\n```sh\nnpm install --save-dev cucumber-promise\n```\n",
+  "readme": "# cucumber-promise\nBackwards compatible cucumber promise support.\n_All these features are implemented in the core `cucumber` starting with\nversion `0.5.0`. If you are using it you don't need `cucumber-promise` anymore_\n## Usage\nJust wrap your implementation steps function into `cpromise`, and\nuse promises, or implement steps without explicitly calling the\ncallback function.\n```javascript\nvar cpromise = require(\"cucumber-promise\").cpromise;\nmodule.exports = cpromise(function() {\n    // the old way works\n    this.Given(/^I run a test with cucumber\\-promise$/, function(callback) {\n        callback();\n    });\n    // code without callbacks works\n    this.Then(/^I run code without callbacks$/, function() {\n        // if no callback it's present, this also works\n    });\n    // and promises also work\n    this.Then(/^I run a promise call$/, function() {\n        return new Promise(function(fulfill, reject) {\n            // promise resolving\n            fulfill();\n        });\n    });\n});\n```\n## Install\nIn order to install this just run:\n```sh\nnpm install --save-dev cucumber-promise\n```\n",
   "readmeFilename": "README.md",
   "homepage": "http://blog.ciplogic.com"
 }

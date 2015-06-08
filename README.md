@@ -2,6 +2,9 @@
 
 Backwards compatible cucumber promise support.
 
+_All these features are implemented in the core `cucumber` starting with
+version `0.5.0`. If you are using it you don't need `cucumber-promise` anymore_
+
 ## Usage
 
 Just wrap your implementation steps function into `cpromise`, and
